@@ -48,26 +48,46 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> arg0, View arg1, int
                     position, long arg3) {
                 Fragment fragment = null;
-                if (position == 0)
+                if (position == 0) {
                     fragment = new BioFragment();
-                else if (position == 1)
+                    FragmentManager fm = getSupportFragmentManager();
+                    FragmentTransaction trans = fm.beginTransaction();
+                    trans.replace(R.id.content_frame, fragment);
+                    trans.commit();
+                    // Highlight the selected item,
+                    //  update the title, and close the drawer
+                    drawerList.setItemChecked(position, true);
+                    currentTitle = drawerItems[position];
+                    ab.setTitle(currentTitle);
+                    drawerLayout.closeDrawer(drawerList);
+                } else if (position == 1) {
                     fragment = new VaccinationFragment();
-                else if (position == 2)
-                    fragment = new AnniversaryFragment();
-                else if (position == 3) {
+                    FragmentManager fm = getSupportFragmentManager();
+                    FragmentTransaction trans = fm.beginTransaction();
+                    trans.replace(R.id.content_frame, fragment);
+                    trans.commit();
+                    // Highlight the selected item,
+                    //  update the title, and close the drawer
+                    drawerList.setItemChecked(position, true);
+                    currentTitle = drawerItems[position];
+                    ab.setTitle(currentTitle);
+                    drawerLayout.closeDrawer(drawerList);
+                } else if (position == 2) {
+                        fragment = new AnniversaryFragment();
+                    FragmentManager fm = getSupportFragmentManager();
+                    FragmentTransaction trans = fm.beginTransaction();
+                    trans.replace(R.id.content_frame, fragment);
+                    trans.commit();
+                    // Highlight the selected item,
+                    //  update the title, and close the drawer
+                    drawerList.setItemChecked(position, true);
+                    currentTitle = drawerItems[position];
+                    ab.setTitle(currentTitle);
+                    drawerLayout.closeDrawer(drawerList);
+                } else if (position == 3) {
                     Intent intent = new Intent(MainActivity.this, AboutUsActivity.class);
                     startActivity(intent);
                 }
-                FragmentManager fm = getSupportFragmentManager();
-                FragmentTransaction trans = fm.beginTransaction();
-                trans.replace(R.id.content_frame, fragment);
-                trans.commit();
-                // Highlight the selected item,
-                //  update the title, and close the drawer
-                drawerList.setItemChecked(position, true);
-                currentTitle = drawerItems[position];
-                ab.setTitle(currentTitle);
-                drawerLayout.closeDrawer(drawerList);
             }
         });
 
