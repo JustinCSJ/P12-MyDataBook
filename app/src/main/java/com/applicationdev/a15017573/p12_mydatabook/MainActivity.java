@@ -58,10 +58,6 @@ public class MainActivity extends AppCompatActivity {
                     FragmentTransaction trans = fm.beginTransaction();
                     trans.replace(R.id.content_frame, fragment);
                     trans.commit();
-                    LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                    final LinearLayout bio = (LinearLayout) inflater.inflate(R.layout.editphrase, null);
-                    final EditText etBio = (EditText) bio.findViewById(R.id.editTextPassPhrase);
-                    final String info = etBio.getText().toString();
                     // Highlight the selected item,
                     //  update the title, and close the drawer
                     drawerList.setItemChecked(position, true);
