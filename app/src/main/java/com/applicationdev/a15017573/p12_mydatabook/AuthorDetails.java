@@ -40,7 +40,7 @@ public class AuthorDetails extends AppCompatActivity {
         if(chosen != -1){
             Picasso.with(AuthorDetails.this).load("https://upload.wikimedia.org/wikipedia/commons/8/80/Republic_Polytechnic_Logo.jpg")
                     .fit().centerCrop()
-                    .placeholder(R.drawable.loading)
+                    .placeholder(R.drawable.ajax_loader)
                     .error(R.drawable.error)
                     .into(iv);
         } else {
