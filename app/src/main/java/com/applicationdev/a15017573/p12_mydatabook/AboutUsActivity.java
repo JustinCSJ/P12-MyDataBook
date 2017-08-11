@@ -13,7 +13,7 @@ public class AboutUsActivity extends AppCompatActivity {
 
     ActionBar ab;
     ListView lv;
-    String [] authors = {"Ah Cheng", "Ah Justin"};
+    String [] authors = {"Ah Cheng", "Ah Jun"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

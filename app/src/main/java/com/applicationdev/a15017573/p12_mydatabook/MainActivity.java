@@ -1,5 +1,6 @@
 package com.applicationdev.a15017573.p12_mydatabook;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
@@ -10,10 +11,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
@@ -54,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
                     FragmentTransaction trans = fm.beginTransaction();
                     trans.replace(R.id.content_frame, fragment);
                     trans.commit();
+                    LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    final LinearLayout bio = (LinearLayout) inflater.inflate(R.layout.editphrase, null);
+                    final EditText etBio = (EditText) bio.findViewById(R.id.editTextPassPhrase);
+                    final String info = etBio.getText().toString();
                     // Highlight the selected item,
                     //  update the title, and close the drawer
                     drawerList.setItemChecked(position, true);

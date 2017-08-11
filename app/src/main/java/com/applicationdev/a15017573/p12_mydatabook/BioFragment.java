@@ -38,13 +38,15 @@ public class BioFragment extends Fragment {
         btnEdit = (Button) v.findViewById(R.id.btnEdit);
         // dbh = new DBHelper(getActivity());
 
+
+
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //set the dialog title
-                final View editView = inflater.inflate(R.layout.fragment_bio, null);
+                final View editView = inflater.inflate(R.layout.editphrase, null);
                 editTextPassPhrase = (EditText) editView.findViewById(R.id.editTextPassPhrase);
-                editTextPassPhrase.setText(tvContent.getText());
+                //editTextPassPhrase.setText(tvContent.getText());
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 //set title
                 builder.setTitle("Edit Bio")
@@ -53,8 +55,7 @@ public class BioFragment extends Fragment {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
 
-
-                                tvContent.setText(editTextPassPhrase.getText());
+                                tvContent.setText(editTextPassPhrase.getText().toString());
                             }
                         })
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

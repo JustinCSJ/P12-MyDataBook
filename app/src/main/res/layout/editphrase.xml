@@ -3,23 +3,23 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit Bio" />
-
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:layout_marginTop="5dp"
         android:background="#404040" />
 
-    <EditText
-        android:id="@+id/editTextPassPhrase"
+    <TextView
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Edit Bio" />
+
+    <EditText
+        android:id="@+id/editTextPassPhrase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="text"></EditText>
+        android:hint="text">Enter here</EditText>
 
 </LinearLayout>

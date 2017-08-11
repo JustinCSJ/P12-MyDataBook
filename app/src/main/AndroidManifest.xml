@@ -21,7 +21,7 @@
         <activity
             android:name=".AboutUsActivity"
             android:parentActivityName=".MainActivity">
-            >
+
         </activity>
         <activity
             android:name=".AuthorDetails"
